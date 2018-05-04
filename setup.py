@@ -26,14 +26,14 @@ setup(
     # package, this name will be registered for you. It will determine how
     # users can install this project:
     #
-    # $ pip install cellsystem
+    # $ pip install phylogeny
     #
-    # And where it will live on PyPI: https://pypi.org/project/cellsystem/
+    # And where it will live on PyPI: https://pypi.org/project/phylogeny/
     #
     # There are some restrictions on what makes a valid project name
     # specification here:
     # https://packaging.python.org/specifications/core-metadata/#name
-    name='cellsystem',  # Required
+    name='phylogeny',  # Required
 
     # Versions should comply with PEP 440:
     # https://www.python.org/dev/peps/pep-0440/
@@ -46,7 +46,7 @@ setup(
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
-    description='An agent-based framework for the simulation of biological cell systems and more.',  # Required
+    description='Algorithms for phylogeny analysis.',  # Required
 
     # This is an optional longer description of your project that represents
     # the body of text which users will see when they visit PyPI.
@@ -62,7 +62,7 @@ setup(
     #
     # This field corresponds to the "Home-Page" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#home-page-optional
-    url='https://github.com/Ad115/Cell-System',  # Optional
+    url='https://github.com/Ad115/Phylogeny',  # Optional
 
     # This should be your name or the name of the organization which owns the
     # project.
@@ -85,8 +85,7 @@ setup(
 
         # Indicate who your project is intended for
         'Intended Audience :: Science/Research',
-        'Intended Audience :: Education',
-        'Topic :: Scientific/Engineering :: Artificial Life',
+        'Intended Audience :: Developers',
         'Topic :: Scientific/Engineering :: Bio-Informatics',
         'Topic :: Scientific/Engineering :: Medical Science Apps.',
 
@@ -102,7 +101,7 @@ setup(
     # project page. What does your project relate to?
     #
     # Note that this is a string of words separated by whitespace, not a list.
-    keywords='simulation cell agents',  # Optional
+    keywords='phylogeny reconstruction inference',  # Optional
 
     # You can just specify package directories manually here if your project is
     # simple. Or you can use find_packages().
@@ -145,9 +144,9 @@ setup(
     # maintainers, and where to support the project financially. The key is
     # what's used to render the link text on PyPI.
     project_urls={  # Optional
-        'Bug Reports': 'https://github.com/Ad115/Cell-System/issues',
+        'Bug Reports': 'https://github.com/Ad115/Phylogeny/issues',
         'Say Thanks!': 'https://saythanks.io/to/Ad115',
-        'Source': 'https://github.com/Ad115/Cell-System/',
+        'Source': 'https://github.com/Ad115/Phylogeny/',
         'Author': 'https://agargar.wordpress.com/'
     },
 )
