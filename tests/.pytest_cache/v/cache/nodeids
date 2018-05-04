@@ -1,0 +1,6 @@
+[
+  "test_cfn_model.py::test_creation",
+  "test_cfn_model.py::test_evolve_traits",
+  "test_clocklike_reconstruction.py::test_simpledistance",
+  "test_ultrametric.py::test_ultrametric_tree"
+]
