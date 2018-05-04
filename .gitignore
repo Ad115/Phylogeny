@@ -1,8 +1,9 @@
+.pytest_cache/
 **/__pycache__
 **ipynb_checkpoints/
 **.directory
 build/
-cellsystem.egg-info/
+**.egg-info/
 dist/
 docs/_build/
 *.ipynb
