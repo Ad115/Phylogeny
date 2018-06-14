@@ -116,7 +116,7 @@ def tree_from_quartets(quartets):
         return tree
 # ---
 
-def all_quartets_method(dist_matrix, names=None)
+def all_quartets_method(dist_matrix, names=None):
     quartets = all_quartets(dist_matrix, names)
     return tree_from_quartets(quartets)
 # ---
