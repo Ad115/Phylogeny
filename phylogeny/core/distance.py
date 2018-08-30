@@ -68,7 +68,7 @@ class DistanceMatrix(np.ndarray):
     # ---
     
     def __repr__(self):
-        return "{}, names={})".format(super().__repr__()[:-1], self.names)
+        return f"{super().__repr__()[:-1]}, names={self.names})"
     # ---
     
     def remove(self, name):
