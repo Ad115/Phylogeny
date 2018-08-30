@@ -47,6 +47,14 @@ Contributing
 Tutorial
 ========
 
+Instalation
+-----------
+
+You can install the package from PyPI::
+
+    $ pip install phylogeny
+
+
 Trees, sequences and distance matrices
 --------------------------------------
 
