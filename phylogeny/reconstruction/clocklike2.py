@@ -19,7 +19,7 @@ has properties that make it “ultrametric”."
 from ..core import DistanceMatrix, Tree
 
 
-def infer_clocklike_tree(distances):
+def infer_clocklike_tree2(distances):
     """Assumming the sequences evolved in a clocklike process, 
     infer the tree.
     
@@ -52,7 +52,7 @@ def infer_clocklike_tree(distances):
         (a,b), _ = min(distances.name_all(), key=lambda item: item[-1])
         # Recurse on (sequences \ a)
         chopped = distances.remove(a)
-        tree = infer_clocklike_tree(chopped)
+        tree = infer_clocklike_tree2(chopped)
         # Find the node corresponding to b and add a as sibling
         tree.add_as_sibling(a, b)
         return tree

@@ -23,7 +23,7 @@ Usage::
     >>> nodes = ['A', 'B', 'C', 'D', 'E']
 
     # Get the tree
-    >>> t = ultrametric_to_tree(ultrametric, nodes)
+    >>> t = infer_clocklike_tree1(ultrametric, nodes)
     >>> print(t)
 
                  /-A
@@ -112,7 +112,7 @@ import networkx as nx
 from ..core import Tree 
 
 
-def ultrametric_to_tree(ultrametric, node_names=None):
+def infer_clocklike_tree1(ultrametric, node_names=None):
     if node_names is None:
         try:
             node_names = ultrametric.names

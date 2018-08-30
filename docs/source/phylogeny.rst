@@ -7,6 +7,8 @@ Subpackages
 .. toctree::
 
     phylogeny.core
+    phylogeny.models
+    phylogeny.reconstruction
 
 Module contents
 ---------------

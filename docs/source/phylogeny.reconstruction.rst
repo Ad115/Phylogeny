@@ -12,18 +12,18 @@ phylogeny\.reconstruction\.allquartets module
     :undoc-members:
     :show-inheritance:
 
-phylogeny\.reconstruction\.clocklike module
--------------------------------------------
+phylogeny\.reconstruction\.clocklike1 module
+--------------------------------------------
 
-.. automodule:: phylogeny.reconstruction.clocklike
+.. automodule:: phylogeny.reconstruction.clocklike1
     :members:
     :undoc-members:
     :show-inheritance:
 
-phylogeny\.reconstruction\.ultrametric module
----------------------------------------------
+phylogeny\.reconstruction\.clocklike2 module
+--------------------------------------------
 
-.. automodule:: phylogeny.reconstruction.ultrametric
+.. automodule:: phylogeny.reconstruction.clocklike2
     :members:
     :undoc-members:
     :show-inheritance:

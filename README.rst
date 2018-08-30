@@ -90,7 +90,7 @@ for generating sequences from an ancestor.
 
 .. code-block:: python
 
-    >>> from phylogeny.models.cfn import CFN_Tree
+    >>> from phylogeny.models import CFN_Tree
     
     # Create a new random tree with 5 leaves.
     >>> cfn = CFN_Tree(leaves=5)
@@ -147,25 +147,25 @@ reconstruction, 2 of which are implemented in the library:
 
 .. code-block:: python
 
-    >>> from phylogeny.core.distance import DistanceMatrix
+    >>> from phylogeny import DistanceMatrix
     
     # An ultrametric matrix
     >>> ultrametric = DistanceMatrix(
-                            [ [0, 8, 8, 5, 3],
-                              [8, 0, 3, 8, 8],
-                              [8, 3, 0, 8, 8],
-                              [5, 8, 8, 0, 5],
-                              [3, 8, 8, 5, 0] ],
-                            names= ['A', 'B', 'C', 'D', 'E']
+                            [[0, 8, 8, 5, 3],
+                             [8, 0, 3, 8, 8],
+                             [8, 3, 0, 8, 8],
+                             [5, 8, 8, 0, 5],
+                             [3, 8, 8, 5, 0] ],
+                            names=['A', 'B', 'C', 'D', 'E']
                         )
 
 
 
 .. code-block:: python
 
-    >>> from phylogeny.reconstruction.ultrametric import ultrametric_to_tree
+    >>> from phylogeny.reconstruction import infer_clocklike_tree1
     
-    >>> t = ultrametric_to_tree(ultrametric)
+    >>> t = infer_clocklike_tree1(ultrametric)
     >>> print(t)
     
           /-B
@@ -182,9 +182,9 @@ reconstruction, 2 of which are implemented in the library:
 
 .. code-block:: python
 
-    >>> from phylogeny.reconstruction.clocklike import infer_clocklike_tree
+    >>> from phylogeny.reconstruction import infer_clocklike_tree2
     
-    >>> t = infer_clocklike_tree(ultrametric)
+    >>> t = infer_clocklike_tree2(ultrametric)
     >>> print(t)
     
           /-D
@@ -207,7 +207,7 @@ Now we can try to apply the clocklike assumption to a CFN model.
 
     # Create a new random tree with 5 leaves.
     >>> cfn = CFN_Tree(leaves=5)
-    >>> cfn.show('inline')
+    >>> cfn.show()
 
 .. image:: https://github.com/Ad115/Phylogeny/raw/master/assets/cfn_tree.png
 
@@ -402,7 +402,7 @@ be, in Newick notation, *((1,2),(3,4))*.)
 
     # A test matrix to test the four-point method
     #    L1 -\    /- L2
-    #        >--<
+    #         >--<
     #    L3 -/    \- L4
     >>> additive = DistanceMatrix([[0, 3,  6,  7],
                                    [3, 0,  7,  6],
@@ -411,7 +411,7 @@ be, in Newick notation, *((1,2),(3,4))*.)
 
 .. code-block:: python
 
-    >>> from phylogeny.reconstruction.allquartets import four_point_method
+    >>> from phylogeny.reconstruction import four_point_method
         
     >>> tree = four_point_method(additive, names=additive.names)
     >>> print(f"The associated tree is: {tree}")
@@ -472,7 +472,7 @@ called the **All Quartets Method**.
 
 .. code-block:: python
 
-    from phylogeny.reconstruction.allquartets import all_quartets_method
+    from phylogeny.reconstruction import all_quartets_method
     
     # Now we infer it from it's distance matrix
     # using the all quartets method
