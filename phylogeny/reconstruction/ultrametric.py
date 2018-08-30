@@ -115,6 +115,9 @@ from ..core import Tree
 def ultrametric_to_tree(ultrametric, node_names=None):
     if node_names is None:
         node_names = ultrametric.names
+    except AttributeError:
+        node_names = tuple(range(len(ultrametric)))
+        
     g = get_graph(ultrametric, node_names)
     P = get_path(g, ultrametric, node_names)
     t = path_to_tree(P)

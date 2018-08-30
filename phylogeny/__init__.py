@@ -1,1 +1,1 @@
-from .core import DistanceMatrix 
+from .core import DistanceMatrix, Tree
