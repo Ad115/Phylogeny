@@ -78,17 +78,13 @@ changing state on every edge according to the edge probability.
 The library contains an implementation of the CFN stochastic tree model
 for generating sequences from an ancestor.
 
-.. code:: ipython3
+.. code-block:: python
 
-    from phylogeny.models.cfn import CFN_Tree
+    >>> from phylogeny.models.cfn import CFN_Tree
     
     # Create a new random tree with 5 leaves.
-    cfn = CFN_Tree(leaves=5)
-    
-    print(cfn)
-
-
-.. parsed-literal::
+    >>> cfn = CFN_Tree(leaves=5)
+    >>> print(cfn)
 
     Node: 0, substitution probability: 0
     Node: 1, substitution probability: 0.35099470913056274
@@ -110,30 +106,16 @@ for generating sequences from an ancestor.
          |
           \-6
 
-
-.. code:: ipython3
-
     # Evolve 5 traits through the tree
-    sequences = cfn.evolve_traits([1,1,1,1,1])
-    print(sequences)
-
-
-.. parsed-literal::
+    >>> sequences = cfn.evolve_traits([1,1,1,1,1])
+    >>> print(sequences)
 
     {3: [0, 0, 1, 1, 0], 4: [1, 1, 1, 1, 1], 7: [1, 1, 1, 1, 1], 8: [1, 0, 0, 1, 1], 6: [1, 1, 1, 1, 1]}
 
-
-.. code:: ipython3
-
-    import numpy as np
-    np.set_printoptions(precision=1)
+    >>> import numpy as np
+    >>> np.set_printoptions(precision=1)
     
-    cfn.distance_matrix()
-
-
-
-
-.. parsed-literal::
+    >>> cfn.distance_matrix()
 
     DistanceMatrix([[0. , 1.7, 4.7, 4.2, 1.8],
                     [1.7, 0. , 4.3, 3.8, 1.4],
@@ -156,20 +138,21 @@ If one has an ultrametric distance matrix (which represents clocklike
 evolution), then there are several algorithms to handle the
 reconstruction, 2 of which are implemented in the library:
 
-.. code:: ipython3
+.. code-block:: python
 
-    from phylogeny.core.distance import DistanceMatrix
+    >>> from phylogeny.core.distance import DistanceMatrix
     
     # An ultrametric matrix
-    ultrametric = DistanceMatrix(
-                      [ [0, 8, 8, 5, 3],
-                        [8, 0, 3, 8, 8],
-                        [8, 3, 0, 8, 8],
-                        [5, 8, 8, 0, 5],
-                        [3, 8, 8, 5, 0] ],
-                      names= ['A', 'B', 'C', 'D', 'E'])
+    >>> ultrametric = DistanceMatrix(
+                            [ [0, 8, 8, 5, 3],
+                              [8, 0, 3, 8, 8],
+                              [8, 3, 0, 8, 8],
+                              [5, 8, 8, 0, 5],
+                              [3, 8, 8, 5, 0] ],
+                            names= ['A', 'B', 'C', 'D', 'E']
+                        )
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     from phylogeny.reconstruction.ultrametric import ultrametric_to_tree
     
@@ -191,7 +174,7 @@ reconstruction, 2 of which are implemented in the library:
           \-D
 
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     from phylogeny.reconstruction.clocklike import infer_clocklike_tree
     
@@ -218,7 +201,7 @@ Clocklike reconstruction on the CFN model
 
 Now we can try to apply the clocklike assumption to a CFN model.
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     # Create a new random tree with 5 leaves.
     cfn = CFN_Tree(leaves=5)
@@ -231,7 +214,7 @@ Now we can try to apply the clocklike assumption to a CFN model.
 
 
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     # Evolve traits through the tree
     sequences = cfn.evolve_traits([1]*10_000)
@@ -268,7 +251,7 @@ Clocklike reconstruction for biological evolution
 
 Now we test the hypothesis on a simulation of biological microevolution.
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     # Download from PyPI:
     #     pip install cellsystem
@@ -307,7 +290,7 @@ Now we test the hypothesis on a simulation of biological microevolution.
     	Final genome: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAA
 
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     # Look at the real ancestry tree
     t = system.log.ancestry(prune_death=True)
@@ -326,7 +309,7 @@ Now we test the hypothesis on a simulation of biological microevolution.
           \-8
 
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     # Fetch the evolved DNA sequences
     cell_sequences = {cell.index:cell.genome for cell in system['cells'].alive_cells}
@@ -401,7 +384,7 @@ values of the three pairwise distance sums are the same.
 The library contains a check for additivity based on the four point
 condition:
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     # Let's take first a matrix that *is* additive
     # -- We take the matrix representation of a known tree.
@@ -421,7 +404,7 @@ condition:
 
 
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     print("Distance matrix is additive: ", distances.is_additive())
     
@@ -446,7 +429,7 @@ split for the four leaves into two sets of two leaves each (remember
 that if D(1,2)+D(3,4) is the smallest sum, then the induced tree must
 be, in Newick notation, ((1,2),(3,4)).)
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     # A test matrix to test the four-point method
     #    L1 -\    /- L2
@@ -457,7 +440,7 @@ be, in Newick notation, ((1,2),(3,4)).)
                                [6, 7,  0, 11],
                                [7, 6, 11,  0]], names=['L1', 'L2', 'L3', 'L4'])
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     from phylogeny.reconstruction.allquartets import four_point_method
         
@@ -494,7 +477,7 @@ In Step 2, we assemble the quartet trees into a tree on the full set of
 leaves. Step 1 is straightforward. The technique we use in Step 2 is
 called the “All Quartets Method”.
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     # We start with a known tree
     cfn = CFN_Tree(leaves=5)
@@ -524,7 +507,7 @@ called the “All Quartets Method”.
                 \-8
 
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     from phylogeny.reconstruction.allquartets import all_quartets_method
     
@@ -551,7 +534,7 @@ called the “All Quartets Method”.
 Looks good! Now, let's test how it performs with the simulated
 biological sequences
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     cell_sequences
 
@@ -567,11 +550,11 @@ biological sequences
 
 
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     m = DistanceMatrix.from_sequences(cell_sequences)    
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     m.is_additive()
 
@@ -584,7 +567,7 @@ biological sequences
 
 
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     t = all_quartets_method(m)
     print(t)
@@ -602,7 +585,7 @@ biological sequences
           \-10
 
 
-.. code:: ipython3
+.. code-block:: ipython3
 
     # Look at the real ancestry tree
     t = system.log.ancestry(prune_death=True)
