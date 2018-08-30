@@ -112,15 +112,16 @@ import networkx as nx
 from ..core import Tree 
 
 
-def ultrametric_to_tree(ultrametric, nodes):
-    g = get_graph(ultrametric, nodes)
-    P = get_path(g, ultrametric, nodes)
+def ultrametric_to_tree(ultrametric, node_names=None):
+    if node_names is None:
+        node_names = ultrametric.names
+    g = get_graph(ultrametric, node_names)
+    P = get_path(g, ultrametric, node_names)
     t = path_to_tree(P)
     t.standardize()
     
     return t
 # ---
-
 
 def get_graph(ultrametric, nodes):
     "From an ultrametric matrix, get the weights graph."

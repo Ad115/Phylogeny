@@ -1,3 +1,5 @@
+# %load phylogeny/core/tree.py
+
 import ete3
 import numpy as np
 import itertools as itr
@@ -43,15 +45,13 @@ class Tree(ete3.Tree):
     # ---
     
     @classmethod
-    def from_quartet(cls, quartet, names=None):
+    def from_quartet(cls, quartet):
         "Transform the quartet structure to a tree."
         # Disassemble the quartet structure
         ((a,b),(c,d)) = quartet
-        if names is None:
-            names = { i:i for i in [a,b,c,d] }
         # Assemble the pairs of siblings
-        ab_cherry = cls.make_cherry_of(names[a],names[b])
-        cd_cherry = cls.make_cherry_of(names[c],names[d])
+        ab_cherry = cls.make_cherry_of(a,b)
+        cd_cherry = cls.make_cherry_of(c,d)
         # Assemble the subtrees
         quartet_tree = cls.join_trees(ab_cherry, cd_cherry)
 

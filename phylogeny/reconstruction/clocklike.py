@@ -19,7 +19,7 @@ has properties that make it “ultrametric”."
 from ..core import DistanceMatrix, Tree
 
 
-def infer_clocklike_tree(sequences):
+def infer_clocklike_tree(distances):
     """Assumming the sequences evolved in a clocklike process, 
     infer the tree.
     
@@ -43,16 +43,15 @@ def infer_clocklike_tree(sequences):
     
         -- From the book.
     """
-    if len(sequences) == 2:
+    if len(distances) == 2:
         # Return a cherry tree
-        cherry = Tree.make_cherry_of(*sequences)
+        cherry = Tree.make_cherry_of(*distances.names)
         return cherry
     else:
         # Find closest taxa a,b in S
-        distances = DistanceMatrix.from_sequences(sequences)
         (a,b), _ = min(distances.name_all(), key=lambda item: item[-1])
         # Recurse on (sequences \ a)
-        chopped = {k:v for k,v in sequences.items() if k != a}
+        chopped = distances.remove(a)
         tree = infer_clocklike_tree(chopped)
         # Find the node corresponding to b and add a as sibling
         tree.add_as_sibling(a, b)

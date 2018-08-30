@@ -71,6 +71,19 @@ class DistanceMatrix(np.ndarray):
         return (  f"{super().__repr__()[:-1]}, names={self.names})" )
     # ---
     
+    def remove(self, name):
+        """Return a new matrix with the column and row with that name deleted."""
+        i = self.idx[name]
+        
+        # Remove row
+        m = np.delete(self, (i), axis=0)
+        # Remove column
+        m = np.delete(m, (i), axis=1)
+        
+        return DistanceMatrix(m, 
+                              names=(n for n in self.names if n != name))
+    # ---        
+    
     def is_additive(self, tolerance=1e-2):
         """Is the distances matrix additive?
 
@@ -82,7 +95,13 @@ class DistanceMatrix(np.ndarray):
 
         return all(four_point_condition(self, q, tolerance) 
                        for q in quartets)
-    # ---   
+    # ---
+    
+    def distances_to(self, name):
+        "Get all the distances to the named sequence."
+        i = self.idx[name]
+        return {n:dist for n,dist in zip(self.names,self[i]) if n != name}
+    # ---
     
     def get(self, item):
         "Get item by name."

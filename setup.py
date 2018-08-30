@@ -46,7 +46,7 @@ setup(
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
-    description='Algorithms for phylogeny analysis.',  # Required
+    description='An exploration of algorithms for phylogeny reconstruction.',  # Required
 
     # This is an optional longer description of your project that represents
     # the body of text which users will see when they visit PyPI.
@@ -101,7 +101,7 @@ setup(
     # project page. What does your project relate to?
     #
     # Note that this is a string of words separated by whitespace, not a list.
-    keywords='phylogeny reconstruction inference',  # Optional
+    keywords='phylogeny reconstruction inference evolution',  # Optional
 
     # You can just specify package directories manually here if your project is
     # simple. Or you can use find_packages().
@@ -131,7 +131,7 @@ setup(
     # Similar to `install_requires` above, these must be valid existing
     # projects.
     extras_require={  # Optional
-        'dev': ['jupyter']
+        'dev': ['jupyter', 'cellsystem']
     },
 
     # List additional URLs that are relevant to your project as a dict.
