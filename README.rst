@@ -342,16 +342,14 @@ unrooted tree:
         >--<
     2 -/    \- 4
 
-Let the distance between leaves 'a' and 'b' be D(a,b). Consider the
+Let the distance between leaves 'a' and 'b' be $D(a,b)$. Consider the
 three following pairwise sums:
 
-::
+- $D(1,2) + D(3,4)$
+- $D(1,3) + D(2,4)$
+- $D(1,4) + D(2,3)$
 
-    * D(1,2) + D(3,4)
-    * D(1,3) + D(2,4)
-    * D(1,4) + D(2,3)
-
-The smallest of these sums has to be D(1,2)+D(3,4), since it covers all
+The smallest of these sums has to be $D(1,2)+D(3,4)$, since it covers all
 the edges of the tree connecting the four leaves, EXCEPT for the ones on
 the path separating 1 and 2 from 3 and 4. Furthermore, the two larger of
 the three pairwise sums have to be identical, since they cover the same
@@ -394,8 +392,8 @@ reconstruct a tree from a 4x4 distance matrix. We calculate the three
 pairwise sums from the four point condition, we determine which of the
 three pairwise sums is the smallest, and use that one to define the
 split for the four leaves into two sets of two leaves each (remember
-that if D(1,2)+D(3,4) is the smallest sum, then the induced tree must
-be, in Newick notation, ((1,2),(3,4)).)
+that if $D(1,2)+D(3,4)$ is the smallest sum, then the induced tree must
+be, in Newick notation, $((1,2),(3,4))$.)
 
 .. code-block:: python
 
