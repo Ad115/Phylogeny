@@ -111,9 +111,6 @@ for generating sequences from an ancestor.
     >>> print(sequences)
 
     {3: [0, 0, 1, 1, 0], 4: [1, 1, 1, 1, 1], 7: [1, 1, 1, 1, 1], 8: [1, 0, 0, 1, 1], 6: [1, 1, 1, 1, 1]}
-
-    >>> import numpy as np
-    >>> np.set_printoptions(precision=1)
     
     >>> cfn.distance_matrix()
 
@@ -122,7 +119,7 @@ for generating sequences from an ancestor.
                     [4.7, 4.3, 0. , 1.3, 2.9],
                     [4.2, 3.8, 1.3, 0. , 2.4],
                     [1.8, 1.4, 2.9, 2.4, 0. ]], names=(3, 4, 7, 8, 6))
-
+                    
 
 
 The clocklike evolution scenario
