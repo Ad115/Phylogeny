@@ -1,4 +1,4 @@
-from phylogeny.cfn_model import CFN_Tree
+from phylogeny.models import CFN_Tree
 
 
 def test_creation():
