@@ -263,8 +263,9 @@ Now we test the hypothesis on a simulation of biological microevolution.
     # Stop logging the steps to the screen
     >>> system.log['printer'].silence()
     >>> system.run(steps=15)
+ 
+::
 
-    
     New cell 0 added @ (50, 50)
     Cell no. 0 migrating from site (50, 50) (father None)
     	New site: (51, 49)

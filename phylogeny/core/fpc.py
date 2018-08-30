@@ -3,7 +3,7 @@ The four point condition.
 
 The Four Point Condition holds for any additive matrix.
 
-Let's say we have the following unrooted tree:
+Let's say we have the following unrooted tree::
 
     1 -\    /- 3
         >--<
