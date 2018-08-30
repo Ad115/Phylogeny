@@ -248,7 +248,7 @@ Now we test the hypothesis on a simulation of biological microevolution.
 
     # Download from PyPI:
     #     pip install cellsystem
-    >>> from cellsystem import *
+    >>> from cellsystem import CellSystem
     
     # The cell system will simulate cell growth
     # while tracking the steps in that process.
