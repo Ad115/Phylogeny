@@ -79,7 +79,7 @@ changes depending on the assumptions of the model.
 
 A good model to study reconstruction algorithms is the
 Cavender-Farris-Neymann (CFN) model, that consists of a random tree with
-probabilities p(e) associated to every edge e of the tree. Under the CFN
+probabilities *p(e)* associated to every edge *e* of the tree. Under the CFN
 model, every character of the sequence or 'trait' evolves down the tree
 changing state on every edge according to the edge probability.
 
@@ -342,14 +342,14 @@ unrooted tree:
         >--<
     2 -/    \- 4
 
-Let the distance between leaves 'a' and 'b' be $D(a,b)$. Consider the
+Let the distance between leaves *a* and *b* be *D(a, b)*. Consider the
 three following pairwise sums:
 
-- $D(1,2) + D(3,4)$
-- $D(1,3) + D(2,4)$
-- $D(1,4) + D(2,3)$
+- *D(1, 2) + D(3, 4)*
+- *D(1, 3) + D(2, 4)*
+- *D(1, 4) + D(2, 3)*
 
-The smallest of these sums has to be $D(1,2)+D(3,4)$, since it covers all
+The smallest of these sums has to be *D(1, 2) + D(3, 4)*, since it covers all
 the edges of the tree connecting the four leaves, EXCEPT for the ones on
 the path separating 1 and 2 from 3 and 4. Furthermore, the two larger of
 the three pairwise sums have to be identical, since they cover the same
@@ -392,8 +392,8 @@ reconstruct a tree from a 4x4 distance matrix. We calculate the three
 pairwise sums from the four point condition, we determine which of the
 three pairwise sums is the smallest, and use that one to define the
 split for the four leaves into two sets of two leaves each (remember
-that if $D(1,2)+D(3,4)$ is the smallest sum, then the induced tree must
-be, in Newick notation, $((1,2),(3,4))$.)
+that if *D(1,2)+D(3,4)* is the smallest sum, then the induced tree must
+be, in Newick notation, *((1,2),(3,4))*.)
 
 .. code-block:: python
 
@@ -429,16 +429,16 @@ The all quartets method
 The all quartets method results from the repeated application of the
 four points method and is useful to reconstruct larger trees.
 
-Given an n×n additive matrix M with n ≥ 5 associated to a binary tree T
-with positive branch lengths, we can construct T using a two-step
+Given an *n×n* additive matrix *M* with *n ≥ 5* associated to a binary tree *T*
+with positive branch lengths, we can construct *T* using a two-step
 technique that we now describe.
 
 In Step 1, we compute a quartet tree on every four leaves by applying
-the Four Point Method to each 4×4 submatrix of M.
+the Four Point Method to each 4×4 submatrix of *M*.
 
 In Step 2, we assemble the quartet trees into a tree on the full set of
 leaves. Step 1 is straightforward. The technique we use in Step 2 is
-called the “All Quartets Method”.
+called the **All Quartets Method**.
 
 .. code-block:: python
 
@@ -530,3 +530,6 @@ biological sequences
 
 Looks good too!! If you liked it, please contribute by adding more
 models, more algorithms, or improving the existing codebase!
+
+If you want to learn more about the algorithms, check the source files or
+in the reference books.
