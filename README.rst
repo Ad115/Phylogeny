@@ -220,7 +220,7 @@ Now we can try to apply the clocklike assumption to a CFN model.
     >>> distances = DistanceMatrix.from_sequences(sequences)
     
     # Infer the tree
-    >>> t = infer_clocklike_tree(distances)
+    >>> t = infer_clocklike_tree1(distances)
     >>> print(t)
     
        /-8
@@ -304,7 +304,7 @@ Now we test the hypothesis on a simulation of biological microevolution.
     >>> distances = DistanceMatrix.from_sequences(cell_sequences)
     
     # Inferr a tree under the clocklike assumption
-    >>> t = infer_clocklike_tree(distances)
+    >>> t = infer_clocklike_tree1(distances)
     >>> print(t)
     
        /-10
