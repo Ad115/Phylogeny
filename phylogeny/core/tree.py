@@ -145,8 +145,8 @@ class Tree(ete3.Tree):
         for i,j in pairs:
             d = self.get_distance(leaves[i],
                                   leaves[j])
-            distances[i,j] = distances[j,i] = d 
-            
+            distances.set((leaves[i].name, leaves[j].name), d)
+        
         return distances
     # ---
 # --- Tree
