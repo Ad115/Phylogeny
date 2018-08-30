@@ -207,7 +207,7 @@ Now we can try to apply the clocklike assumption to a CFN model.
     >>> cfn = CFN_Tree(leaves=5)
     >>> cfn.show('inline')
 
-.. image:: assets/cfn_tree.png
+.. image:: https://github.com/Ad115/Phylogeny/raw/master/assets/cfn_tree.png
 
 .. code-block:: python
 
