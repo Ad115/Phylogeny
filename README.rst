@@ -9,7 +9,7 @@ An exploration on phylogenetic reconstruction algorithms.
 
 In biological evolution one deals with entities that evolve in time.
 Usually these entities can be represented by strings and the evolution
-of these entities corresponds to chnges in the corresponding string. For
+of these entities corresponds to changes in the corresponding string. For
 example: - An organism may be represented by it's DNA sequence, - or by
 a list of characteristics that represents it - A protein can be
 represented by it's nucleotide sequence, - or by it's sequence of
