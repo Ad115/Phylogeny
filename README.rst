@@ -29,8 +29,11 @@ The algorithms are based, in part, by the ones found in the books:
 Meta
 ====
 
-Author: `Ad115 <https://agargar.wordpress.com/>`__ -
+**Author**: `Ad115 <https://agargar.wordpress.com/>`__ -
 `Github <https://github.com/Ad115/>`__ – a.garcia230395@gmail.com
+
+**Project pages**: 
+`Docs <https://phylogeny.readthedocs.io>`__ - `@GitHub <https://github.com/Ad115/Phylogeny/>`__ - `@PyPI <https://pypi.org/project/phylogeny/>`__
 
 Distributed under the MIT license. See LICENSE for more information.
 
@@ -52,7 +55,7 @@ Tutorial
 Instalation
 -----------
 
-You can install the package from PyPI::
+You can install the package from `PyPI <https://pypi.org/project/phylogeny/>`__::
 
     $ pip install phylogeny
 
